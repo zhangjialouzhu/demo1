@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>用户列表</title>
+    <script th:inline="javascript" >
+        var val=document.getElementById("num").value;
+        alert(num);
+
+        function up() {
+            window.location = 'http://127.0.0.1:8080/index?pageNum=1'
+        }
+        function down() {
+            window.location = 'http://127.0.0.1:8080/index?pageNum=2'
+        }
+    </script>
+</head>
+<body>
+<div style="width: 1000px;" >
+    <input id="num" th:text="${user.pageNum}" th:value="${user.pageNum}">
+    <table style="border-width: 1px;border-style: dashed;">
+        <tr>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>密码</td>
+        </tr>
+        <p th:each="user:${users}">
+            <tr>
+                <td th:text="${user.id}">ID</td>
+                <td th:text="${user.name}">姓名</td>
+            </tr>
+        </p>
+    </table>
+   <!-- <div id="page" url="/userlist" ></div>-->
+    <!--<div th:replace="page :: page"></div>-->
+    <a href="http://127.0.0.1:8080/index?action=up">up</a>
+    <a href="http://127.0.0.1:8080/index?action=down">down</a>
+</div>
+</body>
+</html>

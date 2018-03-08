@@ -1,0 +1,6 @@
+com\yuc\service\impl\UserServiceImpl.class
+com\yuc\controller\UserController.class
+com\yuc\model\User.class
+com\yuc\service\UserService.class
+com\yuc\utils\UUIDUtil.class
+com\yuc\dao\UserMapper.class
